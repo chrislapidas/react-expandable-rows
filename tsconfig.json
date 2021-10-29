@@ -11,6 +11,6 @@
     "jsx": "react",
     "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
-  "include": ["./src/ExpandableTable.tsx"],
+  "include": ["./src/ExpandableTable.tsx", "src/index.ts"],
   "exclude": ["node_modules"]
 }
