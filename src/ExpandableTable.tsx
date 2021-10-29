@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React = require("react");
+import { useState } from "react";
 import ExpandableTableRow from "./ExpandableTableRow";
 import { Column } from "./ExpandableTableColumn";
 import "./expandableTable.scss";
