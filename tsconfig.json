@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "dist",
     "target": "es5",
     "module": "commonjs",
     "noImplicitAny": true,
@@ -9,8 +9,9 @@
     "declaration": false,
     "sourceMap": true,
     "jsx": "react",
-    "typeRoots": ["index.d.ts", "node_modules/@types"]
+    "typeRoots": ["index.d.ts", "node_modules/@types"],
+    "types": ["react-dom"]
   },
-  "include": ["./src/ExpandableTable.tsx", "src/index.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "app"]
 }

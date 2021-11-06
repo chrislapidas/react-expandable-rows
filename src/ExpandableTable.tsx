@@ -2,7 +2,7 @@ import React = require("react");
 import { useState } from "react";
 import ExpandableTableRow from "./ExpandableTableRow";
 import { Column } from "./ExpandableTableColumn";
-import "./expandableTable.scss";
+import "./expandableTable.css";
 
 export interface CollapseEvent {
   timestamp: number;

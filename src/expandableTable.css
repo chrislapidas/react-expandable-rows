@@ -46,7 +46,6 @@ td {
 
 .expand-collapse-all-row {
   background: var(--gray-1);
-  //box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
   padding: 10px;
 }
 
@@ -62,23 +61,25 @@ td {
   border: none;
   background: none;
   transition: transform 100ms ease-in-out;
-  &.collapsed {
-    transform: rotate(-90deg);
-  }
-  :hover {
-    transition: background-color 300ms ease-in-out;
-    background-color: var(--gray-4);
-    cursor: pointer;
-  }
+}
 
-  span {
-    padding: 10px;
-    border-radius: 100%;
+.icon-button:hover {
+  transition: background-color 300ms ease-in-out;
+  background-color: var(--gray-4);
+  cursor: pointer;
+}
 
-    svg {
-      fill: var(--gray-7);
-    }
-  }
+.icon-button.collapsed {
+  transform: rotate(-90deg);
+}
+
+.icon-button span {
+  padding: 10px;
+  border-radius: 100%;
+}
+
+.icon-button span svg {
+  fill: var(--gray-7);
 }
 
 .field {
