@@ -1,5 +1,5 @@
 import "./App.css";
-import ExpandableTable from "./ExpandableTable";
+import ExpandableTable from "../src/ExpandableTable";
 
 function App() {
   const columns = [

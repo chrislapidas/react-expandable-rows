@@ -1,3 +1,4 @@
-export * from "./ExpandableTable";
-export * from "./ExpandableTableColumn";
-export * from "./ExpandableTableRow";
+import ExpandableTable from "./ExpandableTable";
+import ExpandableTableRow from "./ExpandableTableRow";
+
+export { ExpandableTable, ExpandableTableRow };
