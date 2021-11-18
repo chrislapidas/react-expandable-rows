@@ -33,7 +33,7 @@ td {
   padding: 0px;
 }
 
-.expand-collapse-all {
+.expandCollapseAll {
   border-radius: 5px;
   width: 112px;
   font-family: Manrope;
@@ -44,7 +44,7 @@ td {
   margin: 7px;
 }
 
-.expand-collapse-all-row {
+.expandCollapseAllRow {
   background: var(--gray-1);
   padding: 10px;
 }
@@ -61,6 +61,8 @@ td {
   border: none;
   background: none;
   transition: transform 100ms ease-in-out;
+  border-radius: 100%;
+  padding: 2px;
 }
 
 .icon-button:hover {
