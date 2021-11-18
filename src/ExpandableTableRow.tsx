@@ -1,4 +1,4 @@
-import React = require("react");
+import React from "react";
 import { DownOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { CollapseEvent } from "./ExpandableTable";

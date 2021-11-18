@@ -1,4 +1,4 @@
-import React = require("react");
+import React from "react";
 import { useState } from "react";
 import ExpandableTableRow from "./ExpandableTableRow";
 import { Column } from "./ExpandableTableColumn";
@@ -64,9 +64,9 @@ const ExpandableTable: React.FC<Props> = ({
   };
 
   const buttons = (
-    <div className={"expand-collapse-all-row"}>
+    <div className={"expandCollapseAllRow"}>
       <button
-        className={"expand-collapse-all"}
+        className={"expandCollapseAll"}
         onClick={(e) => {
           setCollapseAllEvent({ timestamp: e.timeStamp, collapse: false });
         }}
@@ -74,7 +74,7 @@ const ExpandableTable: React.FC<Props> = ({
         Expand All
       </button>
       <button
-        className={"expand-collapse-all"}
+        className={"expandCollapseAll"}
         onClick={(e) => {
           setCollapseAllEvent({ timestamp: e.timeStamp, collapse: true });
         }}
