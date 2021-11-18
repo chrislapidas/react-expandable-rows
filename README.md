@@ -2,14 +2,26 @@
 
 A react table component with expandable rows
 
-## Getting Started
+## Installation
 
-//TODO
+```
+npm i react-xp-table
+```
+
+## Usage
+
+## API
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 ## Authors
 
-- **Chris Lapidas** - _Development_ - [ChrisLapidas](https://github.com/chrislapidas)
+- [Chris Lapidas](https://github.com/chrislapidas) - _Development_
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](../blob/master/LICENSE) file for details
