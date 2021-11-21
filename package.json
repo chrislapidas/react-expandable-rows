@@ -1,6 +1,6 @@
 {
-  "name": "react-expandable-rows",
-  "version": "0.2.11",
+  "name": "react-exp-table",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "keywords": [

@@ -1,11 +1,20 @@
-# react-expandable-rows
+# react-exp-table
+
+[![NPM](https://nodei.co/npm/react-exp-table.png)](https://npmjs.org/package/react-exp-table)
 
 A react table component with expandable rows
+
+## Features
+
+- Expandable rows
+- Child row key mapping
+- Conditional initial expand/collapse state by row
+- Conditional row background colors
 
 ## Installation
 
 ```
-npm i react-xp-table
+npm i react-exp-table
 ```
 
 ## Usage

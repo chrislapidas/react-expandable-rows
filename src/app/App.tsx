@@ -2,6 +2,34 @@ import "./App.css";
 import ExpandableTable from "../ExpandableTable";
 
 function App() {
+  const simpleColumns = [
+    {
+      title: "Location",
+      columnData: [{ key: "location" }]
+    },
+    {
+      title: "Population",
+      columnData: [{ key: "population" }]
+    },
+    { title: "Party", columnData: [{ key: "party" }] }
+  ];
+
+  const simpleData = [
+    { location: "Texas", population: "29 million", party: "Republican" },
+    {
+      location: "California",
+      population: "39 million",
+      party: "Democrat",
+      child: [
+        {
+          location: "Los Angeles",
+          population: "4 million",
+          party: "Democrat"
+        }
+      ]
+    }
+  ];
+
   const columns = [
     {
       title: "Field",
@@ -183,6 +211,15 @@ function App() {
     <div className="App">
       <h1>react-expandable-rows</h1>
 
+      <h2>Simple Example</h2>
+      <ExpandableTable
+        columns={simpleColumns}
+        data={simpleData}
+        childDataKey={"child"}
+        rowKey={"location"}
+      ></ExpandableTable>
+
+      <h2>Complex Example</h2>
       <ExpandableTable
         columns={columns}
         data={data}
