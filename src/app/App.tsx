@@ -5,13 +5,13 @@ function App() {
   const simpleColumns = [
     {
       title: "Location",
-      columnData: [{ key: "location" }]
+      columnData: [{ key: "location" }],
     },
     {
       title: "Population",
-      columnData: [{ key: "population" }]
+      columnData: [{ key: "population" }],
     },
-    { title: "Party", columnData: [{ key: "party" }] }
+    { title: "Party", columnData: [{ key: "party" }] },
   ];
 
   const simpleData = [
@@ -24,10 +24,10 @@ function App() {
         {
           location: "Los Angeles",
           population: "4 million",
-          party: "Democrat"
-        }
-      ]
-    }
+          party: "Democrat",
+        },
+      ],
+    },
   ];
 
   const columns = [
@@ -35,14 +35,14 @@ function App() {
       title: "Field",
       columnData: [
         { key: "field", class: "field" },
-        { key: "type", class: "type" }
-      ]
+        { key: "type", class: "type" },
+      ],
     },
     {
       title: "Description",
-      columnData: [{ key: "description", class: "description" }]
+      columnData: [{ key: "description", class: "description" }],
     },
-    { title: "Tags", columnData: [{ key: "tags", class: "tags" }] }
+    { title: "Tags", columnData: [{ key: "tags", class: "tags" }] },
   ];
 
   const rowColor = (rowData: {
@@ -86,16 +86,16 @@ function App() {
           fieldPath: "item_info.item_name",
           type: "String",
           description: "The name of the item",
-          source: ["schema_B", "schema_A"]
+          source: ["schema_B", "schema_A"],
         },
         {
           field: "item_description",
           fieldPath: "item_info.item_description",
           type: "String",
           description: "The description of the item",
-          source: ["schema_B", "schema_A"]
-        }
-      ]
+          source: ["schema_B", "schema_A"],
+        },
+      ],
     },
     {
       field: "shipment_info",
@@ -114,7 +114,7 @@ function App() {
               field: "name",
               fieldPath: "shipment_info.source.name",
               type: "String",
-              source: ["schema_B"]
+              source: ["schema_B"],
             },
             {
               field: "metadata",
@@ -126,11 +126,11 @@ function App() {
                   field: "properties",
                   fieldPath: "shipment_info.source.metadata.properties",
                   type: "String",
-                  source: ["schema_B"]
-                }
-              ]
-            }
-          ]
+                  source: ["schema_B"],
+                },
+              ],
+            },
+          ],
         },
         {
           field: "desination",
@@ -143,7 +143,7 @@ function App() {
               field: "name",
               fieldPath: "shipment_info.desination.name",
               type: "String",
-              source: ["schema_B", "schema_A"]
+              source: ["schema_B", "schema_A"],
             },
             {
               field: "metadata",
@@ -155,9 +155,9 @@ function App() {
                   field: "properties",
                   fieldPath: "shipment_info.desination.metadata.properties",
                   type: "String",
-                  source: ["schema_B", "schema_A"]
-                }
-              ]
+                  source: ["schema_B", "schema_A"],
+                },
+              ],
             },
             {
               field: "payment_info",
@@ -170,15 +170,15 @@ function App() {
                   field: "price",
                   fieldPath: "shipment_info.desination.payment_info.price",
                   type: "Number",
-                  source: ["schema_B", "schema_A"]
+                  source: ["schema_B", "schema_A"],
                 },
                 {
                   field: "currency",
                   fieldPath: "shipment_info.desination.payment_info.currency",
                   type: "String",
-                  source: ["schema_B", "schema_A"]
-                }
-              ]
+                  source: ["schema_B", "schema_A"],
+                },
+              ],
             },
             {
               field: "geo_info",
@@ -191,21 +191,21 @@ function App() {
                   fieldPath: "shipment_info.desination.geo_info.lat",
                   type: "Number",
                   tags: ["Latitude"],
-                  source: ["schema_A"]
+                  source: ["schema_A"],
                 },
                 {
                   field: "lng",
                   fieldPath: "shipment_info.desination.geo_info.lng",
                   type: "Number",
                   tags: ["Longitude"],
-                  source: ["schema_A"]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+                  source: ["schema_A"],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ];
   return (
     <div className="App">
@@ -219,7 +219,7 @@ function App() {
         rowKey={"location"}
       ></ExpandableTable>
 
-      <h2>Complex Example</h2>
+      <h2>Advanced Example</h2>
       <ExpandableTable
         columns={columns}
         data={data}
