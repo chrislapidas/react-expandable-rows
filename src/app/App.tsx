@@ -209,17 +209,43 @@ function App() {
   ];
   return (
     <div className="App">
-      <h1>react-expandable-rows</h1>
+      <h1>react-exp-table</h1>
+      <hr></hr>
 
+      <div>
+        A react table component with expandable rows. This table uses consistent
+        columns across all child rows and does not nest tables within rows.
+      </div>
+      <div style={{ padding: 10 }}></div>
+      <div>
+        For questions, please contact{" "}
+        <a href="mailto: clapidas@gmail.com">clapidas@gmail.com</a> -Chris
+        Lapidas
+      </div>
+      <h3>
+        NPM:{" "}
+        <a href="https://www.npmjs.com/package/react-exp-table">
+          https://www.npmjs.com/package/react-exp-table
+        </a>
+      </h3>
+      <h3>
+        Github:{" "}
+        <a href="https://github.com/chrislapidas/react-expandable-rows">
+          https://github.com/chrislapidas/react-expandable-rows
+        </a>
+      </h3>
+      <div style={{ padding: 30 }}></div>
       <h2>Simple Example</h2>
+      <hr></hr>
       <ExpandableTable
         columns={simpleColumns}
         data={simpleData}
         childDataKey={"child"}
         rowKey={"location"}
       ></ExpandableTable>
-
+      <div style={{ padding: 30 }}></div>
       <h2>Advanced Example</h2>
+      <hr></hr>
       <ExpandableTable
         columns={columns}
         data={data}

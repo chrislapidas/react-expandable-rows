@@ -4,9 +4,9 @@
 
 A react table component with expandable rows. This table uses consistent columns across all child rows and does not nest tables within rows.
 
----
-
 ## Features
+
+---
 
 - Nested expandable rows
 - Child row key mapping
@@ -15,23 +15,23 @@ A react table component with expandable rows. This table uses consistent columns
 - Columns can include multiple entries per column
 - All rows are loaded on initial load to ensure high performance when expanding/collapsing rows
 
----
-
 ## Installation
+
+---
 
 ```
 npm i react-exp-table
 ```
 
----
-
 ## Example
+
+---
 
 [https://main.d1ckh0bbpylcrw.amplifyapp.com/](https://main.d1ckh0bbpylcrw.amplifyapp.com/)
 
----
-
 ## Usage
+
+---
 
 ```
 const columns = [
@@ -50,7 +50,11 @@ const columns = [
 ];
 
 const data = [
-  { location: "Texas", population: "29 million", party: "Republican" },
+  {
+      location: "Texas",
+      population: "29 million",
+      party: "Republican"
+  },
   {
     location: "California",
     population: "39 million",
@@ -61,8 +65,8 @@ const data = [
         population: "4 million",
         party: "Democrat"
       }
-    ],
-  },
+    ]
+  }
 ];
 
 <ExpandableTable
@@ -75,11 +79,13 @@ const data = [
 
 ## Result
 
-![Example picture of the expandable table](example.JPG)
-
 ---
 
+![Example picture of the expandable table](example.JPG)
+
 ## Props
+
+---
 
 | Prop         |        Type        | Default |
 | ------------ | :----------------: | ------: |
@@ -88,9 +94,9 @@ const data = [
 | childDataKey |       string       |         |
 | rowKey       |       string       |         |
 
----
-
 ## Column definition
+
+---
 
 ```
 interface Column {
@@ -106,8 +112,12 @@ interface ColumnData {
 
 ## Authors
 
+---
+
 - [Chris Lapidas](https://github.com/chrislapidas) - _Development_
 
 ## License
+
+---
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/chrislapidas/react-expandable-rows/blob/main/LICENSE) file for details
