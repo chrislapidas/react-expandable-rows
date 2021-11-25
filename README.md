@@ -6,8 +6,6 @@ A react table component with expandable rows. This table uses consistent columns
 
 ## Features
 
----
-
 - Nested expandable rows
 - Child row key mapping
 - Conditional initial expand/collapse state by row
@@ -17,23 +15,19 @@ A react table component with expandable rows. This table uses consistent columns
 
 ## Installation
 
----
-
 ```
 npm i react-exp-table
 ```
 
 ## Example
 
----
-
 [https://main.d1ckh0bbpylcrw.amplifyapp.com/](https://main.d1ckh0bbpylcrw.amplifyapp.com/)
 
 ## Usage
 
----
-
 ```
+import ExpandableTable from "react-exp-table";
+
 const columns = [
   {
     title: "Location",
@@ -69,23 +63,21 @@ const data = [
   }
 ];
 
-<ExpandableTable
+return (
+  <ExpandableTable
     columns={columns}
     data={data}
     childDataKey={"child"}
     rowKey={"location"}
-></ExpandableTable>
+  ></ExpandableTable>
+);
 ```
 
 ## Result
 
----
-
 ![Example picture of the expandable table](example.JPG)
 
 ## Props
-
----
 
 | Prop         |        Type        | Default |
 | ------------ | :----------------: | ------: |
@@ -95,8 +87,6 @@ const data = [
 | rowKey       |       string       |         |
 
 ## Column definition
-
----
 
 ```
 interface Column {
@@ -112,12 +102,8 @@ interface ColumnData {
 
 ## Authors
 
----
-
 - [Chris Lapidas](https://github.com/chrislapidas) - _Development_
 
 ## License
-
----
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/chrislapidas/react-expandable-rows/blob/main/LICENSE) file for details

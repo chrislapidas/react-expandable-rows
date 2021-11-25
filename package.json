@@ -1,8 +1,8 @@
 {
   "name": "react-exp-table",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "keywords": [
     "react",
     "table",
@@ -42,7 +42,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-component": "rm -rf ./dist && mkdir 'dist' && tsc && cp src/expandableTable.css dist/",
+    "build-component": "rm -rf ./dist && mkdir dist && tsc && cp src/expandableTable.css dist/src/ && cp src/main.js dist/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
