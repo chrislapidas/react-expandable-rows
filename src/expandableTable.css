@@ -11,6 +11,7 @@
 table {
   margin: auto;
   min-width: 100%;
+  border-spacing: 0px;
 }
 
 tr {
@@ -62,7 +63,8 @@ td {
   background: none;
   transition: transform 100ms ease-in-out;
   border-radius: 100%;
-  padding: 2px;
+  padding: 3px;
+  margin: 5px;
 }
 
 .icon-button:hover {

@@ -218,9 +218,8 @@ function App() {
       </div>
       <div style={{ padding: 10 }}></div>
       <div>
-        For questions, please contact{" "}
-        <a href="mailto: clapidas@gmail.com">clapidas@gmail.com</a> -Chris
-        Lapidas
+        For questions contact{" "}
+        <a href="mailto: clapidas@gmail.com">clapidas@gmail.com</a>
       </div>
       <h3>
         NPM:{" "}
