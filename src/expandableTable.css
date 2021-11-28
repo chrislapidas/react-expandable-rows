@@ -165,7 +165,7 @@ td {
 .row-background-first,
 .row-background-middle,
 .row-background-last {
-  min-height: 43px;
+  min-height: 49px;
   display: flex;
   align-items: center;
 }
