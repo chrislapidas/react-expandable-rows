@@ -120,19 +120,30 @@ const ExpandableTableRow: React.FC<Props> = ({
   };
 
   const renderTableDataContents = (column: Column) => {
-    return column.columnData.map((columnData, columnDataIndex) => {
-      if (data[columnData.key]) {
-        return (
-          <span
-            //key={data[rowKey] + columnData.key + columnDataIndex}
-            className={columnData.class}
-          >
-            {data[columnData.key]}
-          </span>
-        );
-      }
-      return undefined;
-    });
+    if (typeof column.key == "string") {
+      let className =
+        typeof column.class == "string" ? column.class : column.class?.[0];
+      return <span className={className}>{data[column.key]}</span>;
+    } else {
+      return column.key.map((key, keyIndex) => {
+        if (data[key]) {
+          let className =
+            typeof column.class == "string"
+              ? column.class
+              : column.class?.[keyIndex];
+          //let className = classNames[columnDataIndex] || column.class;
+          return (
+            <span
+              //key={data[rowKey] + columnData.key + columnDataIndex}
+              className={className}
+            >
+              {data[key]}
+            </span>
+          );
+        }
+        return undefined;
+      });
+    }
   };
 
   const rowData = columns?.map((column, index, arr) => {
@@ -181,12 +192,11 @@ const ExpandableTableRow: React.FC<Props> = ({
     }
   });
 
+  const key =
+    typeof columns[0].key == "string" ? columns[0].key : columns[0].key[0];
   return (
     <>
-      <tr
-        className={trClasses}
-        key={childLevel + data[columns[0].columnData[0].key]}
-      >
+      <tr className={trClasses} key={childLevel + data[key]}>
         {rowData}
       </tr>
       {childRows}

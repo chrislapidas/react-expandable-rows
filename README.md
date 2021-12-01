@@ -28,49 +28,52 @@ npm i react-exp-table
 ```
 import ExpandableTable from "react-exp-table";
 
-const columns = [
-  {
-    title: "Location",
-    columnData: [{ key: "location" }],
-  },
-  {
-    title: "Population",
-    columnData: [{ key: "population" }],
-  },
-  {
-    title: "Party",
-    columnData: [{ key: "party" }]
-  }
-];
+function App(){
+  const columns = [
+    {
+      title: "Location",
+      key: "location"
+    },
+    {
+      title: "Population",
+      key: "population"
+    },
+    {
+      title: "Party",
+      key: "party"
+    }
+  ];
 
-const data = [
-  {
+  const data = [
+    {
       location: "Texas",
       population: "29 million",
       party: "Republican"
-  },
-  {
-    location: "California",
-    population: "39 million",
-    party: "Democrat",
-    child: [
-      {
-        location: "Los Angeles",
-        population: "4 million",
-        party: "Democrat"
-      }
-    ]
-  }
-];
+    },
+    {
+      location: "California",
+      population: "39 million",
+      party: "Democrat",
+      child: [
+        {
+          location: "Los Angeles",
+          population: "4 million",
+          party: "Democrat"
+        }
+      ]
+    }
+  ];
 
-return (
-  <ExpandableTable
-    columns={columns}
-    data={data}
-    childDataKey={"child"}
-    rowKey={"location"}
-  ></ExpandableTable>
-);
+  return (
+    <ExpandableTable
+      columns={columns}
+      data={data}
+      childDataKey={"child"}
+      rowKey={"location"}
+    ></ExpandableTable>
+  );
+
+}
 ```
 
 ## Result
@@ -91,20 +94,24 @@ return (
 ## Column definition
 
 ```
-interface Column {
+export interface Column {
   title: string;
-  columnData: ColumnData[];
-}
-
-interface ColumnData {
-  key: string;
-  class?: string; //optional
+  key: string | string[];
+  class?: string | string[]; //optional
 }
 ```
+
+## Changelog
+
+2.0.0 (30 Nov 2021) - Simplify column definition
 
 ## Authors
 
 - [Chris Lapidas](https://github.com/chrislapidas) - _Development_
+
+## Questions
+
+- [clapidas@gmail.com](mailto:clapidas@gmail.com)
 
 ## License
 
