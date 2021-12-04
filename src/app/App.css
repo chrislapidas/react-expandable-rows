@@ -5,3 +5,50 @@
   width: calc(min(90vw, 950px));
   margin: auto;
 }
+
+.field {
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  color: var(--gray-9);
+}
+
+.type {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
+  color: var(--gray-7);
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 20px;
+  min-width: 55px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.tags {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--gray-9);
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.description {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--gray-9);
+}

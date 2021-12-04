@@ -70,6 +70,7 @@ function App(){
       data={data}
       childDataKey={"child"}
       rowKey={"location"}
+      hideCollapseExpandButtons={true}
     ></ExpandableTable>
   );
 
@@ -82,14 +83,15 @@ function App(){
 
 ## Props
 
-| Prop          |        Type        |                                                               Description                                                               |
-| ------------- | :----------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
-| columns       | column (see below) |                                      definition for column titles, keys, and optional css classes                                       |
-| data          |        [ ]         |                                                 data to be displayed in the table rows                                                  |
-| childDataKey  |       string       |                                         key used to identify the child row within a row's data                                          |
-| rowKey        |       string       |                                  key used for react to identify each row of the table - must be unique                                  |
-| rowColor      | function(rowData)  |              returns the css class used to set the background color of the row - uses the row data object as the parameter              |
-| visibleOnInit | function(rowData)  | returns a boolean to identify if the row should be visible on the initial load of the table - uses the row's js object as the parameter |
+| Prop                      |        Type        | Required | Description                                                                                                                             |
+| ------------------------- | :----------------: | :------: | --------------------------------------------------------------------------------------------------------------------------------------- |
+| data                      |        [ ]         |    x     | data to be displayed in the table rows                                                                                                  |
+| columns                   | column (see below) |    x     | definition for column titles, keys, and optional css classes                                                                            |
+| childDataKey              |       string       |    x     | key used to identify the child row within a row's data                                                                                  |
+| rowKey                    |       string       |    x     | key used for react to identify each row of the table - must be unique                                                                   |
+| rowColor                  | function(rowData)  |          | returns the css class used to set the background color of the row - uses the row data object as the parameter                           |
+| visibleOnInit             | function(rowData)  |          | returns a boolean to identify if the row should be visible on the initial load of the table - uses the row's js object as the parameter |
+| hideCollapseExpandButtons |      boolean       |          | hides the "Expand All" and "Collapse All" buttons at the top of the table                                                               |
 
 ## Column definition
 

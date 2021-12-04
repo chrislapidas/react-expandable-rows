@@ -16,6 +16,7 @@ interface Props {
   rowKey?: string;
   rowColor?: (rowData: any) => string | undefined;
   visibleOnInit?: (rowData: any) => boolean;
+  hideCollapseExpandButtons?: boolean;
 }
 
 const ExpandableTable: React.FC<Props> = ({
@@ -24,12 +25,13 @@ const ExpandableTable: React.FC<Props> = ({
   childDataKey,
   rowKey,
   rowColor,
-  visibleOnInit
+  visibleOnInit,
+  hideCollapseExpandButtons,
 }) => {
   /** An "event" used to collapse or expand all rows in the table */
   const [collapseAllEvent, setCollapseAllEvent] = useState<CollapseEvent>({
     timestamp: 0,
-    collapse: undefined
+    collapse: undefined,
   });
 
   const rows = data.map((value) => {
@@ -63,26 +65,29 @@ const ExpandableTable: React.FC<Props> = ({
     });
   };
 
-  const buttons = (
-    <div className={"expandCollapseAllRow"}>
-      <button
-        className={"expandCollapseAll"}
-        onClick={(e) => {
-          setCollapseAllEvent({ timestamp: e.timeStamp, collapse: false });
-        }}
-      >
-        Expand All
-      </button>
-      <button
-        className={"expandCollapseAll"}
-        onClick={(e) => {
-          setCollapseAllEvent({ timestamp: e.timeStamp, collapse: true });
-        }}
-      >
-        Collapse All
-      </button>
-    </div>
-  );
+  let buttons;
+  if (!hideCollapseExpandButtons) {
+    buttons = (
+      <div className={"expandCollapseAllRow"}>
+        <button
+          className={"expandCollapseAll"}
+          onClick={(e) => {
+            setCollapseAllEvent({ timestamp: e.timeStamp, collapse: false });
+          }}
+        >
+          Expand All
+        </button>
+        <button
+          className={"expandCollapseAll"}
+          onClick={(e) => {
+            setCollapseAllEvent({ timestamp: e.timeStamp, collapse: true });
+          }}
+        >
+          Collapse All
+        </button>
+      </div>
+    );
+  }
 
   return (
     <>
