@@ -75,7 +75,7 @@ td {
 }
 
 .icon-button:hover {
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, transform 100ms ease-in-out;
   background-color: var(--gray-4);
   cursor: pointer;
 }

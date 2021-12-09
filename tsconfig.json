@@ -10,9 +10,18 @@
     "declarationMap": true,
     "sourceMap": true,
     "jsx": "react-jsx",
-    "typeRoots": ["index.d.ts", "node_modules/@types"],
-    "types": ["react-dom"],
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types"
+    ],
+    "types": [
+      "react-dom"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -23,8 +32,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "strict": true,
-    "noEmit": false
+    "noEmit": true
   },
-  "include": ["export.tsx"],
-  "exclude": ["node_modules", "src/app"]
+  "include": [
+    "export.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/app"
+  ]
 }

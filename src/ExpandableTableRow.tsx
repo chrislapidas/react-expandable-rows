@@ -9,7 +9,7 @@ interface Props {
   hidden: boolean;
   columns: Column[];
   childLevel: number;
-  childDataKey: string;
+  childDataKey?: string;
   collapseAllEvent: CollapseEvent;
   rowKey?: string;
   rowColor?: (rowData: any) => string | undefined;
@@ -153,7 +153,6 @@ const ExpandableTableRow: React.FC<Props> = ({
 
     if (index === 0) {
       childClasses = childLevelClasses;
-      console.log(childClasses);
       collapse = renderCollapse(data);
       className = "row-background-first";
     } else if (index === columns.length - 1) {

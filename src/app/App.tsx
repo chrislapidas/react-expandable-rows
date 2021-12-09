@@ -1,5 +1,7 @@
 import "./App.css";
 import ExpandableTable from "../ExpandableTable";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function App() {
   const simpleColumns = [
@@ -15,7 +17,15 @@ function App() {
   ];
 
   const simpleData = [
-    { location: "Texas", population: "29 million", party: "Republican" },
+    {
+      location: "Texas",
+      population: "29 million",
+      party: "Republican",
+      child: [
+        { location: "Houston", population: "2 million", party: "Democrat" },
+        { location: "Austin", population: "1 million", party: "Democrat" }
+      ]
+    },
     {
       location: "California",
       population: "39 million",
@@ -25,10 +35,80 @@ function App() {
           location: "Los Angeles",
           population: "4 million",
           party: "Democrat"
-        }
+        },
+        { location: "San Jose", population: "1 million", party: "Democrat" }
       ]
     }
   ];
+
+  const simpleDataLiteral = `
+  import ExpandableTable from "react-exp-table";
+
+  function App(){
+
+    const columns = [
+      {
+        title: "Location",
+        key: "location"
+      },
+      {
+        title: "Population",
+        key: "population"
+      },
+      { 
+        title: "Party", 
+        key: "party" 
+      }
+    ];
+
+    const data = [
+      {
+        location: "Texas",
+        population: "29 million",
+        party: "Republican",
+        child: [
+          { 
+            location: "Houston", 
+            population: "2 million", 
+            party: "Democrat" 
+          },
+          { 
+            location: "Austin", 
+            population: "1 million", 
+            party: "Democrat" 
+          }
+        ]
+      },
+      {
+        location: "California",
+        population: "39 million",
+        party: "Democrat",
+        child: [
+          {
+            location: "Los Angeles",
+            population: "4 million",
+            party: "Democrat"
+          },
+          { 
+            location: "San Jose", 
+            population: "1 million", 
+            party: "Democrat" 
+          }
+        ]
+      }
+    ];
+
+    return(
+      <ExpandableTable
+        columns={columns}
+        data={data}
+        rowKey={"location"}
+      ></ExpandableTable>
+    );
+  }
+
+
+  `;
 
   const columns = [
     {
@@ -206,6 +286,8 @@ function App() {
       ]
     }
   ];
+
+  const installText = `npm i react-exp-table`;
   return (
     <div className="App">
       <h1>react-exp-table</h1>
@@ -234,20 +316,23 @@ function App() {
       </h3>
       <div style={{ padding: 10 }}></div>
       <h2>Installation</h2>
-      <div style={{ padding: 10 }}></div>
-
-      <code>npm i react-exp-table</code>
-      <div style={{ padding: 30 }}></div>
+      <SyntaxHighlighter language="javascript" style={prism}>
+        {installText}
+      </SyntaxHighlighter>
+      <div style={{ padding: 20 }}></div>
       <h2>Simple Example</h2>
       <hr />
       <ExpandableTable
         columns={simpleColumns}
         data={simpleData}
-        childDataKey={"child"}
         rowKey={"location"}
-        hideCollapseExpandButtons={true}
       ></ExpandableTable>
-      <div style={{ padding: 30 }}></div>
+      <div style={{ padding: 10 }}></div>
+
+      <SyntaxHighlighter language="javascript" style={prism}>
+        {simpleDataLiteral}
+      </SyntaxHighlighter>
+      <div style={{ padding: 20 }}></div>
 
       <h2>Advanced Example</h2>
       <hr />
