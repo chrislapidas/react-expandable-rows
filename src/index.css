@@ -11,4 +11,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  color: white;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
 }

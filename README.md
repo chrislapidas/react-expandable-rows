@@ -25,10 +25,10 @@ npm i react-exp-table
 
 ## Usage
 
-```
+```ts
 import ExpandableTable from "react-exp-table";
 
-function App(){
+function App() {
   const columns = [
     {
       title: "Location",
@@ -73,7 +73,6 @@ function App(){
       hideCollapseExpandButtons={true}
     ></ExpandableTable>
   );
-
 }
 ```
 
@@ -95,11 +94,11 @@ function App(){
 
 ## Column definition
 
-```
+```ts
 export interface Column {
   title: string;
   key: string | string[];
-  class?: string | string[]; //optional
+  class?: string | string[];
 }
 ```
 

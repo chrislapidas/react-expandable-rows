@@ -146,6 +146,34 @@ const ExpandableTableRow: React.FC<Props> = ({
     }
   };
 
+  const mapRowTd = (rowKeyValue: any, index: number, column: Column) => {
+    let childClasses;
+    let collapse;
+    let className;
+
+    if (index === 0) {
+      childClasses = childLevelClasses;
+      console.log(childClasses);
+      collapse = renderCollapse(data);
+      className = "row-background-first";
+    } else if (index === columns.length - 1) {
+      className = "row-background-last";
+    } else {
+      className = "row-background-middle";
+    }
+
+    return (
+      <td key={rowKeyValue + index} className={childClasses}>
+        <div className={"row-underline"}>
+          <div className={className} style={trStyles}>
+            {collapse}
+            {renderTableDataContents(column)}
+          </div>
+        </div>
+      </td>
+    );
+  };
+
   const rowData = columns?.map((column, index, arr) => {
     const rowKeyValue = () => {
       if (rowKey) {
@@ -155,41 +183,7 @@ const ExpandableTableRow: React.FC<Props> = ({
       }
     };
 
-    //first td in the row
-    if (index === 0) {
-      return (
-        <td key={rowKeyValue() + index} className={childLevelClasses}>
-          <div className={"row-underline"}>
-            <div className={"row-background-first"} style={trStyles}>
-              {renderCollapse(data)}
-              {renderTableDataContents(column)}
-            </div>
-          </div>
-        </td>
-      );
-      //last td in the row
-    } else if (index === columns.length - 1) {
-      return (
-        <td key={rowKeyValue() + index}>
-          <div className={"row-underline"}>
-            <div className={"row-background-last"} style={trStyles}>
-              {renderTableDataContents(column)}
-            </div>
-          </div>
-        </td>
-      );
-    } else {
-      //middle tds in the row
-      return (
-        <td key={rowKeyValue() + index}>
-          <div className={"row-underline"}>
-            <div className={"row-background-middle"} style={trStyles}>
-              {renderTableDataContents(column)}
-            </div>
-          </div>
-        </td>
-      );
-    }
+    return mapRowTd(rowKeyValue(), index, column);
   });
 
   const key =
