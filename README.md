@@ -21,7 +21,7 @@ npm i react-exp-table
 
 ## Example
 
-[https://main.d1ckh0bbpylcrw.amplifyapp.com/](https://main.d1ckh0bbpylcrw.amplifyapp.com/)
+[https://www.exptable.com/](https://www.exptable.com/)
 
 ## Usage
 
@@ -48,7 +48,19 @@ function App() {
     {
       location: "Texas",
       population: "29 million",
-      party: "Republican"
+      party: "Republican",
+      child: [
+        {
+          location: "Houston",
+          population: "2 million",
+          party: "Democrat"
+        },
+        {
+          location: "Austin",
+          population: "1 million",
+          party: "Democrat"
+        }
+      ]
     },
     {
       location: "California",
@@ -59,20 +71,17 @@ function App() {
           location: "Los Angeles",
           population: "4 million",
           party: "Democrat"
+        },
+        {
+          location: "San Jose",
+          population: "1 million",
+          party: "Democrat"
         }
       ]
     }
   ];
 
-  return (
-    <ExpandableTable
-      columns={columns}
-      data={data}
-      childDataKey={"child"}
-      rowKey={"location"}
-      hideCollapseExpandButtons={true}
-    ></ExpandableTable>
-  );
+  return <ExpandableTable columns={columns} data={data}></ExpandableTable>;
 }
 ```
 
@@ -104,7 +113,8 @@ export interface Column {
 
 ## Changelog
 
-2.0.0 (30 Nov 2021) - Simplify column definition
+- 2.0.0 (30 Nov 2021) - Simplify column definition
+- 1.0.0 (21 Nov 2021) - Initial release
 
 ## Authors
 

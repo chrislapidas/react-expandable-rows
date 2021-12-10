@@ -1,19 +1,20 @@
 {
   "name": "react-exp-table",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "",
   "main": "dist/main.js",
   "keywords": [
     "react",
     "table",
     "component",
-    "expandable"
+    "expandable",
+    "rows"
   ],
   "files": [
     "dist",
     "README.md"
   ],
-  "homepage": "https://main.d1ckh0bbpylcrw.amplifyapp.com/",
+  "homepage": "https://www.exptable.com/",
   "bugs": {
     "url": "https://github.com/chrislapidas/react-expandable-rows/issues",
     "email": "clapidas@gmail.com"
