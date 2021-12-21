@@ -6,11 +6,11 @@ import { Column } from "./ExpandableTableColumn";
 
 interface Props {
   data: any;
-  hidden: boolean;
   columns: Column[];
   childLevel: number;
   childDataKey?: string;
   collapseAllEvent: CollapseEvent;
+  hideChildren: CollapseEvent;
   rowKey?: string;
   rowColor?: (rowData: any) => string | undefined;
   visibleOnInit?: (rowData: any) => boolean;
@@ -19,11 +19,11 @@ interface Props {
 
 const ExpandableTableRow: React.FC<Props> = ({
   data,
-  hidden,
   columns,
   childLevel,
   childDataKey,
   collapseAllEvent,
+  hideChildren,
   rowKey,
   rowColor,
   visibleOnInit,
@@ -31,6 +31,8 @@ const ExpandableTableRow: React.FC<Props> = ({
 }) => {
   //controls whether child rows are displayed as well as the rotated state of the collapse icon
   const [collapsed, setCollapsed] = useState(true);
+
+  const [hidden, setHidden] = useState(true);
 
   //function to be passed to the child rows, expands the parent
   const expand =
@@ -40,7 +42,7 @@ const ExpandableTableRow: React.FC<Props> = ({
       ? () => {}
       : () => {
           setCollapsed(false);
-          hidden = false;
+          setHidden(false);
           expandParent();
         };
 
@@ -62,15 +64,40 @@ const ExpandableTableRow: React.FC<Props> = ({
 
   useEffect(() => {
     if (hidden) {
-      setCollapsed(true);
+      //setCollapsed(true);
+    }
+
+    if (!hidden && !collapsed) {
+      setHideRowChildren({ collapse: false, timestamp: Date.now() });
     }
   }, [hidden]);
 
   useEffect(() => {
     if (typeof collapseAllEvent.collapse == "boolean") {
       setCollapsed(collapseAllEvent.collapse);
+      if (collapseAllEvent.collapse) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
     }
   }, [collapseAllEvent]);
+
+  useEffect(() => {
+    if (typeof hideChildren.collapse == "boolean") {
+      if (hideChildren.collapse) {
+        setHidden(true);
+        setHideRowChildren(hideChildren);
+      } else {
+        setHidden(false);
+      }
+    }
+  }, [hideChildren]);
+
+  const [hideRowChildren, setHideRowChildren] = useState<CollapseEvent>({
+    timestamp: 0,
+    collapse: undefined
+  });
 
   const childRows: any = data[childDataKey || "child"]?.map((data: any) => {
     const rowKeyValue = () => {
@@ -85,7 +112,6 @@ const ExpandableTableRow: React.FC<Props> = ({
       <ExpandableTableRow
         key={rowKeyValue()}
         collapseAllEvent={collapseAllEvent}
-        hidden={collapsed}
         columns={columns}
         data={data}
         childLevel={childLevel + 1}
@@ -94,6 +120,7 @@ const ExpandableTableRow: React.FC<Props> = ({
         rowColor={rowColor}
         visibleOnInit={visibleOnInit}
         expandParent={expand}
+        hideChildren={hideRowChildren}
       ></ExpandableTableRow>
     );
   });
@@ -103,8 +130,14 @@ const ExpandableTableRow: React.FC<Props> = ({
       return (
         <button
           className={collapseIconClasses}
-          onClick={() => {
+          onClick={(e) => {
             setCollapsed(!collapsed);
+            if (!collapsed) {
+              //setHidden(true);
+              setHideRowChildren({ collapse: true, timestamp: e.timeStamp });
+            } else {
+              setHideRowChildren({ collapse: false, timestamp: e.timeStamp });
+            }
           }}
         >
           <DownOutlined />

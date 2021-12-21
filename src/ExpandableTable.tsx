@@ -26,12 +26,12 @@ const ExpandableTable: React.FC<Props> = ({
   rowKey,
   rowColor,
   visibleOnInit,
-  hideCollapseExpandButtons,
+  hideCollapseExpandButtons
 }) => {
   /** An "event" used to collapse or expand all rows in the table */
   const [collapseAllEvent, setCollapseAllEvent] = useState<CollapseEvent>({
     timestamp: 0,
-    collapse: undefined,
+    collapse: undefined
   });
 
   const rows = data.map((value) => {
@@ -46,7 +46,10 @@ const ExpandableTable: React.FC<Props> = ({
       <ExpandableTableRow
         key={rowKeyValue()}
         collapseAllEvent={collapseAllEvent}
-        hidden={false}
+        hideChildren={{
+          timestamp: 0,
+          collapse: undefined
+        }}
         data={value}
         columns={columns}
         childDataKey={childDataKey || "child"}
