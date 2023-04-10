@@ -482,7 +482,6 @@ function App() {
     <div className="App">
       <h1>react-exp-table</h1>
       <hr></hr>
-
       <div>
         A react table component with expandable rows. This table uses consistent
         columns across all child rows and does not nest tables within rows.
@@ -491,11 +490,11 @@ function App() {
       <div>
         For questions contact{" "}
         <a href="mailto: clapidas@gmail.com">clapidas@gmail.com</a>
-      </div>
-      <div>
+      </div>{" "}
+      <h4>
         Want to support this library?{" "}
         <a href="https://ko-fi.com/chrislapidas">Buy me a coffee on Ko-Fi!</a>
-      </div>
+      </h4>
       <h3>
         NPM:{" "}
         <a href="https://www.npmjs.com/package/react-exp-table">
@@ -522,12 +521,10 @@ function App() {
         rowKey={"location"}
       ></ExpandableTable>
       <div style={{ padding: 10 }}></div>
-
       <SyntaxHighlighter language="javascript" style={prism}>
         {simpleDataLiteral}
       </SyntaxHighlighter>
       <div style={{ padding: 20 }}></div>
-
       <h2>Advanced Example</h2>
       <hr />
       <ExpandableTable
@@ -538,12 +535,14 @@ function App() {
         rowColor={rowColor}
         visibleOnInit={visibleOnInit}
       ></ExpandableTable>
-
       <div style={{ padding: 10 }}></div>
-
       <SyntaxHighlighter language="javascript" style={prism}>
         {dataLiteral}
       </SyntaxHighlighter>
+      <h4>
+        Want to support this library?{" "}
+        <a href="https://ko-fi.com/chrislapidas">Buy me a coffee on Ko-Fi!</a>
+      </h4>
     </div>
   );
 }
