@@ -492,6 +492,10 @@ function App() {
         For questions contact{" "}
         <a href="mailto: clapidas@gmail.com">clapidas@gmail.com</a>
       </div>
+      <div>
+        Want to support this library?{" "}
+        <a href="https://ko-fi.com/chrislapidas">Buy me a coffee on Ko-Fi!</a>
+      </div>
       <h3>
         NPM:{" "}
         <a href="https://www.npmjs.com/package/react-exp-table">
